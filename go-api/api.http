@@ -1,0 +1,33 @@
+POST http://localhost:3331/category HTTP/1.1
+HOST: localhost:3331
+Content-Type: application/json
+
+{
+  "name": "Category 2",
+  "description": "Category 2 Description"
+}
+
+###
+POST http://localhost:3331/product HTTP/1.1
+HOST: localhost:3331
+Content-Type: application/json
+
+{
+  "name": "Product 2",
+  "description": "Product 2 Description",
+  "category_id": "8f9780c4-0eae-4473-bf64-66de91a9ad8d",
+  "price": 159.2,
+  "image_url": "https://a-static.mlcdn.com.br/450x450/relogio-champion-masculino-digital-preto-led-vermelho-silicone-ch40188d/fkjshopping/15863826999/2b9035fcd21a2bfba09ad6f024af11d6.jpg"
+}
+
+###
+GET http://localhost:3331/product HTTP/1.1
+HOST: localhost:3331
+
+###
+GET http://localhost:3331/product/f4fbb00c-a796-48a9-91cc-c50fd6769308 HTTP/1.1
+HOST: localhost:3331
+
+###
+GET http://localhost:3331/product/category/8f9780c4-0eae-4473-bf64-66de91a9ad8d HTTP/1.1
+HOST: localhost:3331
