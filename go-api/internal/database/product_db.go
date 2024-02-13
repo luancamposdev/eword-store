@@ -10,6 +10,12 @@ type ProductDB struct {
 	db *sql.DB
 }
 
+func NewProductDB(db *sql.DB) *ProductDB {
+	return &ProductDB{
+		db: db,
+	}
+}
+
 func (pd *ProductDB) GetProducts() ([]*entity.Product, error) {
 	rows, err := pd.db.Query("SELECT id, name, description, price, image_url, category_id FROM products")
 	if err != nil {
@@ -32,7 +38,7 @@ func (pd *ProductDB) GetProducts() ([]*entity.Product, error) {
 
 func (pd *ProductDB) GetProduct(id string) (*entity.Product, error) {
 	var product entity.Product
-	err := pd.db.QueryRow("SELECT id, name, description, price, image_url, category_id FROM product WHERE id = ?", id).
+	err := pd.db.QueryRow("SELECT id, name, description, price, image_url, category_id FROM products WHERE id = ?", id).
 		Scan(&product.ID, &product.Name, &product.Description, &product.Price, &product.ImageURL, &product.CategoryID)
 
 	if err != nil {
