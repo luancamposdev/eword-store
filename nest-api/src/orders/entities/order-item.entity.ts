@@ -6,7 +6,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Product } from '../../products/entities/product.entity';
-import { OrderData } from './order-data.entity';
+import { Order } from './order.entity';
 
 @Entity()
 export class OrderItem {
@@ -26,6 +26,6 @@ export class OrderItem {
   @Column()
   product_id: string;
 
-  @ManyToOne(() => OrderData)
-  order: OrderData;
+  @ManyToOne(() => Order)
+  order: Order;
 }

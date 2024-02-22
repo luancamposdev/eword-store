@@ -6,7 +6,7 @@ import { OrderItem } from './orders/entities/order-item.entity';
 import { OrdersModule } from './orders/orders.module';
 import { Product } from './products/entities/product.entity';
 import { ProductsModule } from './products/products.module';
-import { OrderData } from './orders/entities/order-data.entity';
+import { Order } from './orders/entities/order.entity';
 
 @Module({
   imports: [
@@ -17,7 +17,7 @@ import { OrderData } from './orders/entities/order-data.entity';
       username: 'root',
       password: 'unix',
       database: 'nest',
-      entities: [Product, OrderData, OrderItem],
+      entities: [Product, Order, OrderItem],
       synchronize: true,
       logging: true,
     }),

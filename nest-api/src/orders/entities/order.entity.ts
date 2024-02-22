@@ -23,7 +23,7 @@ export type CreateOderCommand = {
 };
 
 @Entity()
-export class OrderData {
+export class Order {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -39,11 +39,11 @@ export class OrderData {
   @CreateDateColumn()
   created_at: Date;
 
-  @OneToMany(() => OrderItem, (item) => item.order)
+  @OneToMany(() => OrderItem, (item) => item.order, { cascade: ['insert'] })
   items: OrderItem[];
 
   static create(input: CreateOderCommand) {
-    const order = new OrderData();
+    const order = new Order();
     order.client_id = input.client_id;
     order.items = input.items.map((item) => {
       const orderItem = new OrderItem();

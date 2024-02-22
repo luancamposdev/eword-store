@@ -3,12 +3,12 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Product } from 'src/products/entities/product.entity';
 import { In, Repository } from 'typeorm';
 import { CreateOrderDto } from './dto/create-order.dto';
-import { OrderData } from './entities/order-data.entity';
+import { Order } from './entities/order.entity';
 
 @Injectable()
 export class OrdersService {
   constructor(
-    @InjectRepository(OrderData) private orderRepo: Repository<OrderData>,
+    @InjectRepository(Order) private orderRepo: Repository<Order>,
     @InjectRepository(Product) private productRepo: Repository<Product>,
   ) {}
   async create(createOrderDto: CreateOrderDto) {
@@ -24,7 +24,7 @@ export class OrdersService {
       );
     }
 
-    const order = OrderData.create({
+    const order = Order.create({
       client_id: '123138484dwdqdwef_rgregre',
       items: createOrderDto.items.map((item) => {
         const product = products.find(

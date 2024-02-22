@@ -5,28 +5,28 @@ Content-Type: application/json
   "name": "Product 5",
   "description": "Product 5 description",
   "image_url": "http://via.placeholder.com/150",
-  "price": 250
+  "price": 255
 }
 
 ###
 GEt http://localhost:3000/products
 
 ###
-GEt http://localhost:3000/products/8c2d6919-b9ef-41da-8459-a9cae53e762c
+GEt http://localhost:3000/products/2048c8fb-38f8-46f7-907e-74674d46e5c3
 
 ###
-Patch http://localhost:3000/products/8c2d6919-b9ef-41da-8459-a9cae53e762c
+Patch http://localhost:3000/products/87e80ace-d100-40fd-ad6b-0e03261fe63c
 Content-Type: application/json
 
 {
-  "price": 135
+  "price": 1560
 }
 
 ### ORDERS
 GET http://localhost:3000/orders 
 
 ###
-GET http://localhost:3000/orders/d9acad0e-569f-4570-a3b4-692395b0dd2d
+GET http://localhost:3000/orders/2048c8fb-38f8-46f7-907e-74674d46e5c3
 
 ###
 POST http://localhost:3000/orders 
@@ -35,12 +35,12 @@ Content-Type: application/json
 {
   "items": [
     {
-      "product_id": "1149d5be-a050-4dbf-b2ab-68cc59481da9",
+      "product_id": "87e80ace-d100-40fd-ad6b-0e03261fe63c",
       "quantity": 1
     },
     {
-      "product_id": "fa34b4b9-08ab-46a4-8c73-36f7e7388fae",
-      "quantity": 2
+      "product_id": "2f73d539-e28b-4345-863e-663d396c4c6e",
+      "quantity": 1
     }
   ],
   "card_hash": "8c2d6919-b9ef-8459-41da-a9cae53e762c"
