@@ -6,7 +6,11 @@ import { OrderItem } from './orders/entities/order-item.entity';
 import { OrdersModule } from './orders/orders.module';
 import { Product } from './products/entities/product.entity';
 import { ProductsModule } from './products/products.module';
+import { AuthModule } from './auth/auth.module';
 import { Order } from './orders/entities/order.entity';
+import { RabbitmqModule } from './rabbitmq/rabbitmq.module';
+import { UsersModule } from './users/users.module';
+import { Users } from './users/entities/user.entity';
 
 @Module({
   imports: [
@@ -17,12 +21,15 @@ import { Order } from './orders/entities/order.entity';
       username: 'root',
       password: 'unix',
       database: 'nest',
-      entities: [Product, Order, OrderItem],
+      entities: [Product, Order, OrderItem, Users],
       synchronize: true,
       logging: true,
     }),
     ProductsModule,
     OrdersModule,
+    RabbitmqModule,
+    AuthModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],

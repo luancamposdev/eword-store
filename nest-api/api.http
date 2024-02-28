@@ -22,25 +22,44 @@ Content-Type: application/json
   "price": 1560
 }
 
+### Users
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Luan Campos",
+  "email": "luancampos@mail.com",
+  "avatar_url": "https://via.placeholder.com/80",
+  "password": "123456"
+}
+
+### Authentication
+POST http://localhost:3000/auth/authentication
+Content-Type: application/json
+
+{
+  "email": "luancampos@mail.com",
+  "password": "123456"
+}
+
 ### ORDERS
 GET http://localhost:3000/orders 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3NTc5N2I3ZC03NDJmLTQ5ZjktYjkwMy1lZjJmYzk4NmQ1OWQiLCJ1c2VyIjp7Im5hbWUiOiJMdWFuIENhbXBvcyIsImVtYWlsIjoibHVhbmNhbXBvc0BtYWlsLmNvbSIsImF2YXRhcl91cmwiOiJodHRwczovL3ZpYS5wbGFjZWhvbGRlci5jb20vODAifSwiaWF0IjoxNzA5MTMzMDM3LCJleHAiOjE3MDkxMzMwOTd9.pVoEyB2s_UOPV_MDiuqTXBHQPCO28kDPXuZSgYgVF4I
 
 ###
-GET http://localhost:3000/orders/2048c8fb-38f8-46f7-907e-74674d46e5c3
+GET http://localhost:3000/orders/b8bd9716-de50-4697-8d8e-a75c66f963f9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3ZjhjOWQ4ZS05ZjBhLTFiMmMtM2Q0ZS01ZjZnN2g4aTlqMGsiLCJ1c2VybmFtZSI6InByaWNpbGEiLCJpYXQiOjE3MDg5MTU4MjYsImV4cCI6MTcwODkxNTg4Nn0.xGkaEbglB1er4pu0KRIfXW15EBUiLDke_RJsa8ciP7c
 
 ###
 POST http://localhost:3000/orders 
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3ZjhjOWQ4ZS05ZjBhLTFiMmMtM2Q0ZS01ZjZnN2g4aTlqMGsiLCJ1c2VybmFtZSI6InByaWNpbGEiLCJpYXQiOjE3MDg5MTg2NDYsImV4cCI6MTcwODkxODcwNn0.uJ2tOvRtW3bz294T9FTPJQaSuJRSJXCVtbDffSSfUnk
 
 {
   "items": [
     {
-      "product_id": "87e80ace-d100-40fd-ad6b-0e03261fe63c",
-      "quantity": 1
-    },
-    {
-      "product_id": "2f73d539-e28b-4345-863e-663d396c4c6e",
-      "quantity": 1
+      "product_id": "368cf5d9-26d6-40b3-ac11-f44c170a8152",
+      "quantity": 2
     }
   ],
   "card_hash": "8c2d6919-b9ef-8459-41da-a9cae53e762c"
