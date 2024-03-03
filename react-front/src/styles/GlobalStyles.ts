@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
   * {
@@ -6,6 +6,7 @@ export default createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     user-select: none;
+    font-family: 'Poppins', sans-serif;
   }
   @media (max-width: 1800px) {
     html {
@@ -43,4 +44,4 @@ export default createGlobalStyle`
     background: #ccc;
   }
   }
-`;
+`
