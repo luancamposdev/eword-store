@@ -20,7 +20,7 @@ import { Users } from './users/entities/user.entity';
       port: 3306,
       username: 'root',
       password: 'unix',
-      database: 'nest',
+      database: 'orders',
       entities: [Product, Order, OrderItem, Users],
       synchronize: true,
       logging: true,
