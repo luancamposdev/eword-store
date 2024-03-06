@@ -14,7 +14,7 @@ import (
 )
 
 func main() {
-	db, err := sql.Open("mysql", "root:unix@tcp(localhost:3306)/products")
+	db, err := sql.Open("mysql", "root:unix@tcp(localhost:3306)/gomicroservice")
 	if err != nil {
 		panic(err.Error())
 	}
@@ -43,6 +43,6 @@ func main() {
 	c.Get("/product/category/{categoryID}", webProductHandler.GetProductByCategoryID)
 	c.Post("/product", webProductHandler.CreateProduct)
 
-	fmt.Println("🔥Server is running on port 3331")
+	fmt.Println("🔥 Server is running on port ::3331")
 	http.ListenAndServe(":3331", c)
 }
