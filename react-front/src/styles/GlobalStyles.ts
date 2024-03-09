@@ -27,6 +27,8 @@ export default createGlobalStyle`
   }
 
   html {
+    width: 100vw;
+    height: 100vh;
      // Scroll
   ::-webkit-scrollbar {
     width: 10px;

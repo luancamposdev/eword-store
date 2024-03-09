@@ -12,6 +12,7 @@ import {
     NavContent,
     SeachInput,
 } from './styles'
+import { Link } from 'react-router-dom'
 
 function HeaderNav() {
     return (
@@ -31,15 +32,15 @@ function HeaderNav() {
                         </button>
                     </SeachInput>
                     <NavContent>
-                        <button type="button">
+                        <Link to="#">
                             <MdFavorite />
-                        </button>
+                        </Link>
 
-                        <button type="button">
+                        <Link to="#">
                             <IoMdCart />
-                        </button>
+                        </Link>
 
-                        <button type="button">Faça Login ou cadastre-se</button>
+                        <Link to="/login">Faça Login ou cadastre-se</Link>
                     </NavContent>
                 </Nav>
             </HeaderNavigation>
