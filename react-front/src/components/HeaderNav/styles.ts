@@ -62,33 +62,35 @@ export const NavContent = styled.div`
     display: flex;
     gap: 20px;
 
-    button:nth-child(1) {
+    a:nth-child(1) {
         display: flex;
         align-items: center;
         font-size: 25px;
         background-color: transparent;
         cursor: pointer;
         border: none;
+        color: black;
 
         &:hover {
             color: red;
         }
     }
 
-    button:nth-child(2) {
+    a:nth-child(2) {
         display: flex;
         align-items: center;
         font-size: 25px;
         background-color: transparent;
         cursor: pointer;
         border: none;
+        color: black;
 
         &:hover {
             color: blue;
         }
     }
 
-    button:nth-child(3) {
+    a:nth-child(3) {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -99,6 +101,7 @@ export const NavContent = styled.div`
         background-color: transparent;
         cursor: pointer;
         border: none;
+        color: black;
 
         &:hover {
             color: blue;
